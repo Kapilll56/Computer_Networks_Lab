@@ -1,0 +1,49 @@
+Libraries Used:
+
+<iostream>: For basic input and output operations like printing messages to the console.
+
+<sys/socket.h>: Provides functions for socket creation and manipulation (for network communication).
+
+<netinet/in.h>: Defines constants and structures for internet domain addresses (IPv4).
+
+<unistd.h>: Contains system calls like read, write, and close for interacting with file descriptors (like sockets).
+
+<cstring>: For memory manipulation functions like memset and strcmp.
+
+Server Code:
+
+Create a Socket: The server creates a TCP socket using socket().
+
+Bind the Socket: The server binds the socket to an IP address (INADDR_ANY) and a port number (e.g., 5001).
+
+Listen for Connections: It listens for incoming connections using listen().
+
+Accept Connection: When a client connects, the server accepts the connection with accept().
+
+Receive Data: The server reads the data sent by the client using read().
+
+Send Response: After processing, the server sends a response back to the client using send().
+
+Close the Socket: Finally, the server closes the connection using close().
+
+Client Code:
+
+Create a Socket: The client creates a TCP socket using socket().
+
+Connect to Server: The client connects to the server using connect() and the server’s IP and port (5001).
+
+Send Data: The client sends a message to the server using send().
+
+Receive Response: The client waits for and reads the server's response using read().
+
+Close the Socket: The client closes the socket after communication is finished with close().
+
+How They Work Together:
+
+The server listens on a specified port and waits for the client to connect.
+
+The client connects to the server and sends data (e.g., text, images).
+
+The server processes the data and sends a response back.
+
+This basic TCP communication allows two programs to exchange information over a network.
